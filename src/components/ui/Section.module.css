@@ -1,0 +1,15 @@
+.section {
+  padding: 6rem 4rem;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    padding: 3rem 1.2rem;
+  }
+}

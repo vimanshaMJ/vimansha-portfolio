@@ -1,0 +1,140 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(12, 15, 26, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: padding 0.3s;
+}
+
+.nav.scrolled {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.logo {
+  font-family: var(--font-serif), serif;
+  font-size: 1.35rem;
+  color: var(--amber);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+.links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.links a:hover,
+.links a.active {
+  color: var(--amber);
+}
+
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.cta {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--amber);
+  padding: 0.55rem 1.4rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta:hover {
+  background: var(--amber-light);
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ctaOutline {
+  background: transparent;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+}
+
+.ctaOutline:hover {
+  background: transparent;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    padding: 1.2rem 2rem;
+  }
+
+  .links,
+  .actions {
+    display: none;
+  }
+
+  .links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(12, 15, 26, 0.98);
+    padding: 2rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav {
+    padding: 0.9rem 1.2rem;
+  }
+}

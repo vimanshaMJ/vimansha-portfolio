@@ -1,0 +1,76 @@
+.skills {
+  background: var(--bg2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.8rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s, transform 0.4s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  border-color: rgba(232, 168, 56, 0.3);
+  box-shadow: var(--glow);
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 1rem;
+  color: var(--amber);
+}
+
+.title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  font-size: 0.8rem;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.3rem;
+  }
+
+  .chip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.55rem;
+  }
+}
