@@ -1,55 +1,46 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import styles from './Contact.module.css';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
     if (!sent) return;
-    const timer = setTimeout(() => setSent(false), 3000);
-    return () => clearTimeout(timer);
+    const t = setTimeout(() => setSent(false), 3000);
+    return () => clearTimeout(t);
   }, [sent]);
 
   // TODO: wire this up to a real backend/email service. Currently a visual stub.
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setSent(true);
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit} noValidate>
-      <div className={styles.group}>
-        <label className={styles.formLabel} htmlFor="contact-name">
-          Your Name
-        </label>
-        <input id="contact-name" type="text" className={styles.input} placeholder="Jane Smith" />
-      </div>
-      <div className={styles.group}>
-        <label className={styles.formLabel} htmlFor="contact-email">
-          Email Address
-        </label>
-        <input
-          id="contact-email"
-          type="email"
-          className={styles.input}
-          placeholder="jane@example.com"
-        />
-      </div>
-      <div className={styles.group}>
-        <label className={styles.formLabel} htmlFor="contact-message">
-          Message
-        </label>
-        <textarea
-          id="contact-message"
-          className={styles.textarea}
-          placeholder="Tell me about your project or opportunity…"
-        />
-      </div>
-      <button type="submit" className={styles.submit} data-sent={sent}>
-        {sent ? 'Message Sent ✓' : 'Send Message →'}
-      </button>
-    </form>
+    <Card className="p-6 sm:p-8">
+      <form onSubmit={onSubmit} noValidate className="space-y-5">
+        <div className="space-y-2">
+          <Label htmlFor="contact-name">Your Name</Label>
+          <Input id="contact-name" placeholder="Jane Smith" />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-email">Email Address</Label>
+          <Input id="contact-email" type="email" placeholder="jane@example.com" />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-message">Message</Label>
+          <Textarea id="contact-message" placeholder="Tell me about your project or opportunity…" />
+        </div>
+        <Button type="submit" size="lg" className="w-full">
+          {sent ? 'Message Sent ✓' : 'Send Message →'}
+        </Button>
+      </form>
+    </Card>
   );
 }

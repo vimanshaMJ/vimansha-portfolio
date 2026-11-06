@@ -1,11 +1,12 @@
-import Section from '@/components/ui/Section';
-import SectionHeader from '@/components/ui/SectionHeader';
+import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
+import { Reveal } from '@/components/ui/reveal';
+import { Section, SectionHeader } from '@/components/ui/section';
 import { aboutParagraphs, highlights, infoCards } from '@/data/about';
-import styles from './About.module.css';
 
 export default function About() {
   return (
-    <Section id="about" className={styles.about}>
+    <Section id="about" className="bg-muted/50">
       <SectionHeader
         number="01"
         title={
@@ -14,26 +15,29 @@ export default function About() {
           </>
         }
       />
-      <div className={styles.grid}>
-        <div className={styles.text}>
-          {aboutParagraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+        <Reveal className="space-y-5 text-muted-foreground">
+          {aboutParagraphs.map((p, i) => (
+            <p key={p} className={i === 0 ? 'text-lg leading-relaxed text-foreground' : undefined}>
+              {p}
+            </p>
           ))}
-          <div className={styles.pills}>
-            {highlights.map((item) => (
-              <span key={item} className={styles.pill}>
-                {item}
-              </span>
+          <div className="flex flex-wrap gap-2 pt-2">
+            {highlights.map((h) => (
+              <Badge key={h}>{h}</Badge>
             ))}
           </div>
-        </div>
-
-        <div className={styles.cards}>
-          {infoCards.map((card) => (
-            <div key={card.label} className={styles.card}>
-              <div className={styles.label}>{card.label}</div>
-              <div className={styles.value}>{card.value}</div>
-            </div>
+        </Reveal>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+          {infoCards.map((c, i) => (
+            <Reveal key={c.label} delay={i * 60}>
+              <Card className="px-6 py-5 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                <div className="mb-1 font-mono text-[0.65rem] uppercase tracking-[0.15em] text-primary">
+                  {c.label}
+                </div>
+                <div className="text-[0.95rem]">{c.value}</div>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </div>

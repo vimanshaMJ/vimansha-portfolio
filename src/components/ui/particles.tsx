@@ -1,26 +1,21 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
-const PARTICLE_COUNT = 55;
+const COUNT = 45;
 
-interface Particle {
-  x: number;
-  y: number;
-  r: number;
-  dx: number;
-  dy: number;
-  o: number;
-}
-
-export default function ParticlesBackground() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+export default function Particles() {
+  const ref = useRef<HTMLCanvasElement>(null);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = ref.current;
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+    const rgb = resolvedTheme === 'light' ? '168,105,10' : '232,168,56';
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -28,13 +23,13 @@ export default function ParticlesBackground() {
     resize();
     window.addEventListener('resize', resize);
 
-    const dots: Particle[] = Array.from({ length: PARTICLE_COUNT }, () => ({
+    const dots = Array.from({ length: COUNT }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       r: Math.random() * 1.5 + 0.4,
-      dx: (Math.random() - 0.5) * 0.35,
-      dy: (Math.random() - 0.5) * 0.35,
-      o: Math.random() * 0.5 + 0.2,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      o: Math.random() * 0.45 + 0.15,
     }));
 
     let frame = 0;
@@ -43,7 +38,7 @@ export default function ParticlesBackground() {
       for (const d of dots) {
         ctx.beginPath();
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(232,168,56,${d.o})`;
+        ctx.fillStyle = `rgba(${rgb},${d.o})`;
         ctx.fill();
         d.x += d.dx;
         d.y += d.dy;
@@ -58,20 +53,13 @@ export default function ParticlesBackground() {
       cancelAnimationFrame(frame);
       window.removeEventListener('resize', resize);
     };
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <canvas
-      ref={canvasRef}
+      ref={ref}
       aria-hidden="true"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        pointerEvents: 'none',
-        zIndex: 1,
-        opacity: 0.65,
-      }}
+      className="pointer-events-none fixed inset-0 z-0 opacity-60"
     />
   );
 }
