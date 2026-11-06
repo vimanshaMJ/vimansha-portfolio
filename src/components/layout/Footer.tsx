@@ -1,15 +1,14 @@
 import { footerLinks } from '@/data/navigation';
 import { site } from '@/data/site';
-import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.copy}>{site.copyright}</div>
-      <div className={styles.links}>
-        {footerLinks.map((link) => (
-          <a key={link.href} href={link.href}>
-            {link.label}
+    <footer className="relative z-10 flex flex-col items-center justify-between gap-4 border-t px-5 py-8 text-sm text-muted-foreground sm:flex-row sm:px-8 lg:px-16">
+      <p>{site.copyright}</p>
+      <div className="flex gap-6">
+        {footerLinks.map((l) => (
+          <a key={l.href} href={l.href} className="transition-colors hover:text-primary">
+            {l.label}
           </a>
         ))}
       </div>
