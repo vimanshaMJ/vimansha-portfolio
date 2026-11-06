@@ -52,7 +52,7 @@ export default function Projects() {
                       <FileText className="size-4" /> Read Paper
                     </a>
                   )}
-                  {p.demoUrl && p.demoUrl !== '#' && (
+                  {p.demoUrl && (
                     <a
                       href={p.demoUrl}
                       className="inline-flex items-center gap-1.5 rounded-full border bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-foreground hover:text-background"
@@ -60,7 +60,7 @@ export default function Projects() {
                       Live Demo <ArrowUpRight className="size-4" />
                     </a>
                   )}
-                  {p.githubUrl && p.githubUrl !== '#' && (
+                  {p.githubUrl && (
                     <a
                       href={p.githubUrl}
                       className="inline-flex items-center gap-1.5 rounded-full border bg-background px-4 py-2 text-sm font-medium transition-all hover:bg-foreground hover:text-background"
