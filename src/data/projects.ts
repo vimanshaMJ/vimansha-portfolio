@@ -1,6 +1,6 @@
 import type { Project } from '@/types';
 
-// TODO: replace the '#' placeholders with real demo / repository URLs (placeholder links are hidden in the UI).
+// TODO: replace the '#' placeholders with real demo / repository URLs.
 export const projects: Project[] = [
   {
     name: 'Assembly Line Balancing Optimization — Brandix Apparel Case Study',
@@ -8,6 +8,8 @@ export const projects: Project[] = [
     description:
       'Introduced an efficient line-layout method and a mathematical model for MO allocation that beat the manual approach, with a web interface for automated allocation. Also analysed absenteeism trends with time series methods and proposed workforce-planning improvements.',
     tech: ['Python', 'PuLP', 'Streamlit', 'Pandas', 'Time Series Analysis'],
+    demoUrl: '#',
+    githubUrl: '#',
     paperUrl:
       'https://www.researchgate.net/publication/394383470_AN_OPTIMIZATION_TECHNIQUE_TO_ASSEMBLY_LINE_BALANCING_IN_APPAREL_INDUSTRY',
   },
