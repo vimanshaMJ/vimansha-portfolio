@@ -6,7 +6,7 @@ import Experience from '@/components/sections/Experience';
 import Hero from '@/components/sections/Hero';
 import Projects from '@/components/sections/Projects';
 import Skills from '@/components/sections/Skills';
-import Particles from '@/components/ui/particles';
+import Marquee from '@/components/sections/Marquee';
 
 export default function HomePage() {
   return (
@@ -14,6 +14,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <About />
         <Experience />
         <Skills />
@@ -21,7 +22,6 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
-      <Particles />
     </>
   );
 }
