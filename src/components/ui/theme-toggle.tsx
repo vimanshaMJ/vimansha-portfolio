@@ -8,8 +8,9 @@ export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
+      className="rounded-full"
       aria-label="Toggle light / dark theme"
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >

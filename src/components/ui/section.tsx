@@ -10,7 +10,7 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={cn('px-5 py-16 sm:px-8 md:py-24 lg:px-16', className)}>
+    <section id={id} className={cn('relative px-5 py-20 sm:px-8 md:py-28 lg:px-16', className)}>
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
   );
@@ -18,12 +18,12 @@ export function Section({
 
 export function SectionHeader({ number, title }: { number: string; title: React.ReactNode }) {
   return (
-    <div className="mb-12">
-      <div className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-primary">
+    <div className="mb-12 md:mb-16">
+      <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-card/60 px-3 py-1 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground backdrop-blur">
+        <span className="size-1.5 rounded-full bg-brand-gradient" />
         {number}
-        <span className="h-px w-10 bg-gradient-to-r from-primary to-transparent" />
       </div>
-      <h2 className="font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl [&_em]:text-primary">
+      <h2 className="text-4xl font-semibold leading-[1.05] tracking-tighter sm:text-5xl lg:text-6xl [&_em]:text-gradient [&_em]:not-italic">
         {title}
       </h2>
     </div>
