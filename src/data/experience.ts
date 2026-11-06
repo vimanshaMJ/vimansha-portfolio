@@ -2,24 +2,34 @@ import type { Experience } from '@/types';
 
 export const experience: Experience[] = [
   {
-    period: 'Oct 2025 – Present',
-    role: 'Intern AI/ML Engineer',
-    company: 'Insharp Technologies',
+    period: 'Apr 2026 – Present',
+    role: 'Associate Software Engineer',
+    company: 'Insharp Technologies (PVT) Ltd',
     bullets: [
-      "Designed AI-powered features for a women's clothing platform — virtual fit-on room, measurement suggestions, body-type outfit recommendations, and intelligent outfit pairing.",
-      'Integrated LLM-powered services (Gemini-based APIs) for personalized styling insights and enhanced user experience.',
-      'Developed the full frontend in Next.js & Tailwind CSS, with complete backend integration for client and admin portals.',
-      'Collaborated on model fine-tuning and API orchestration using Python, FastAPI, PostgreSQL, Swagger, and Postman.',
-      'Deployed ML components (including linear regression) within the production pipeline using Git & GitHub.',
+      'Contributing full-stack to an ERP system covering order, customer/supplier, expense, and employee management modules.',
+      'Debugging and resolving issues across frontend and backend to ensure system stability and reliability.',
+      'Working within a cross-functional team using Git/GitHub for version control and Jira for agile project tracking.',
+    ],
+    tech: ['NestJS', 'React', 'Vite', 'Tailwind CSS', 'MongoDB', 'Git', 'GitHub', 'Jira'],
+  },
+  {
+    period: 'Oct 2025 – Apr 2026',
+    role: 'Intern AI/ML Engineer',
+    company: 'Insharp Technologies (PVT) Ltd',
+    bullets: [
+      "Built AI features for a women's clothing platform, including a virtual fit-on room and LLM-based styling recommendations using Gemini APIs.",
+      'Developed the full frontend (Next.js, Tailwind CSS) with backend integration (Python, FastAPI) for client and admin portals.',
+      'Applied predictive modeling (linear regression) and deployed ML components using PostgreSQL, Swagger, and Postman.',
     ],
     tech: [
       'Python',
+      'Linear Regression',
       'FastAPI',
       'Next.js',
       'Tailwind CSS',
       'PostgreSQL',
-      'Gemini API',
-      'Linear Regression',
+      'Swagger',
+      'Postman',
     ],
   },
   {

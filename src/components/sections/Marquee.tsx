@@ -1,8 +1,10 @@
 import { skillCategories } from '@/data/skills';
 
-const items = skillCategories
-  .filter((c) => c.title !== 'Soft Skills')
-  .flatMap((c) => c.skills);
+const FEATURED = ['Languages & Query Tools', 'Frontend', 'Backend', 'Databases', 'Generative AI & LLMs'];
+
+const items = Array.from(
+  new Set(skillCategories.filter((c) => FEATURED.includes(c.title)).flatMap((c) => c.skills)),
+);
 
 export default function Marquee() {
   const row = (

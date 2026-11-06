@@ -1,12 +1,12 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
-import { LinkedinIcon } from '@/components/ui/icons';
+import { GithubIcon, LinkedinIcon } from '@/components/ui/icons';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
 import { SpotlightCard } from '@/components/ui/spotlight-card';
 import { contactIntro, contactLinks } from '@/data/contact';
 import ContactForm from './ContactForm';
 
-const icons = { Email: Mail, Phone, LinkedIn: LinkedinIcon, Location: MapPin } as const;
+const icons = { Email: Mail, Phone, GitHub: GithubIcon, LinkedIn: LinkedinIcon, Location: MapPin } as const;
 
 export default function Contact() {
   return (
@@ -20,7 +20,7 @@ export default function Contact() {
         <div className="relative">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-card/60 px-3 py-1 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground backdrop-blur">
             <span className="size-1.5 rounded-full bg-brand-gradient" />
-            05 — Contact
+            06 — Contact
           </div>
           <h2 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tighter sm:text-6xl">
             Let&apos;s build something <span className="text-gradient">remarkable</span> together.
@@ -37,7 +37,7 @@ export default function Contact() {
                     href={l.href}
                     {...(l.external && { target: '_blank', rel: 'noopener noreferrer' })}
                   >
-                    <SpotlightCard className="flex items-center gap-4 px-5 py-4">
+                    <SpotlightCard className="px-5 py-4" contentClassName="flex items-center gap-4">
                       <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-accent">
                         {Icon && <Icon className="size-4" />}
                       </span>
