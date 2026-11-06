@@ -1,8 +1,8 @@
 import type { InfoItem } from '@/types';
 
 export const aboutParagraphs: string[] = [
-  "I'm a recent graduate passionate about blending statistical rigour with cutting-edge engineering. My degree in Statistics & Operations Research gave me a deep foundation in data — and my hands-on experience in AI/ML and full-stack development taught me how to deploy that knowledge into products people actually use.",
-  "Currently an Intern AI/ML Engineer at Insharp Technologies, I'm shaping an AI-powered women's clothing platform — from virtual fit-on rooms to LLM-driven styling recommendations — while handling the entire frontend in Next.js.",
+  "I'm a software engineer with a BSc in Statistics & Operations Research. That background gave me a deep foundation in data and optimisation — and my hands-on experience in AI/ML and full-stack development taught me how to turn it into products people actually use.",
+  "I'm now an Associate Software Engineer at Insharp Technologies, contributing full-stack to an ERP system (orders, customers & suppliers, expenses, employees) with NestJS, React and MongoDB. Before that, as an AI/ML intern, I built a virtual fit-on room and LLM-driven styling recommendations with Gemini APIs, and shipped the client and admin frontends in Next.js.",
   "I'm driven by creating scalable, user-centric systems that merge machine learning, optimization, and elegant UI design.",
 ];
 
@@ -12,7 +12,7 @@ export const highlights: string[] = [
   'Full-Stack Dev',
   'Statistical Analysis',
   'Deep Learning',
-  'Data Visualization',
+  'RAG & LangChain',
 ];
 
 export const infoCards: InfoItem[] = [

@@ -4,7 +4,12 @@ import { useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 /** Card with a soft brand-coloured glow that follows the cursor. */
-export function SpotlightCard({ className, children, ...props }: React.ComponentProps<'div'>) {
+export function SpotlightCard({
+  className,
+  contentClassName,
+  children,
+  ...props
+}: React.ComponentProps<'div'> & { contentClassName?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -33,7 +38,7 @@ export function SpotlightCard({ className, children, ...props }: React.Component
             'radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in oklab, var(--brand-2) 16%, transparent), transparent 70%)',
         }}
       />
-      <div className="relative h-full">{children}</div>
+      <div className={cn('relative h-full', contentClassName)}>{children}</div>
     </div>
   );
 }

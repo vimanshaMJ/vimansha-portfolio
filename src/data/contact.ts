@@ -8,6 +8,13 @@ export const contactLinks: ContactLink[] = [
   { label: 'Email', value: site.email, href: `mailto:${site.email}`, icon: '✉' },
   { label: 'Phone', value: site.phone, href: site.phoneHref, icon: '📞' },
   {
+    label: 'GitHub',
+    value: site.github,
+    href: `https://${site.github}`,
+    icon: 'gh',
+    external: true,
+  },
+  {
     label: 'LinkedIn',
     value: site.linkedin,
     href: `https://${site.linkedin}`,

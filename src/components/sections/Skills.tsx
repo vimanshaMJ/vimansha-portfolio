@@ -5,8 +5,13 @@ import { SpotlightCard } from '@/components/ui/spotlight-card';
 import { skillCategories } from '@/data/skills';
 import { cn } from '@/lib/utils';
 
-// Bento rhythm for 8 cards on a 4-column grid: each row sums to 4.
-const spans = ['', 'lg:col-span-2', '', 'lg:col-span-2', '', '', 'lg:col-span-2', 'lg:col-span-2'];
+// Bento rhythm for 11 cards on a 4-column grid: each row sums to 4.
+const spans = [
+  '', 'lg:col-span-2', '',
+  '', 'lg:col-span-2', '',
+  '', 'lg:col-span-2', '',
+  'lg:col-span-2', 'lg:col-span-2',
+];
 
 export default function Skills() {
   return (
