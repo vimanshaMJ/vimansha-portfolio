@@ -7,8 +7,8 @@ import './globals.css';
 const sans = Geist({ subsets: ['latin'], variable: '--font-geist', display: 'swap' });
 const mono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', display: 'swap' });
 
-// Absolute URL of the deployed site (GitHub Pages project site) — needed for social preview images.
-const siteUrl = 'https://vimanshamj.github.io/vimansha-portfolio/';
+// Absolute URL of the deployed site (Vercel) — needed for social preview images.
+const siteUrl = 'https://vimanshamj.vercel.app/';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
