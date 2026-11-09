@@ -89,7 +89,7 @@ export default function Hero() {
                   width={360}
                   height={430}
                   priority
-                  className="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+                  className="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-top"
                 />
               </div>
             </div>
