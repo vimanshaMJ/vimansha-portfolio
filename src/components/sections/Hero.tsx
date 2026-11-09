@@ -84,7 +84,7 @@ export default function Hero() {
             <div className="relative rounded-[2rem] bg-brand-gradient p-px">
               <div className="rounded-[calc(2rem-1px)] bg-card p-2">
                 <Image
-                  src={withBasePath('/photo.jpg')}
+                  src={withBasePath('/photo3.png')}
                   alt={site.name}
                   width={360}
                   height={430}
