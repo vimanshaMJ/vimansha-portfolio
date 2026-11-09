@@ -28,6 +28,8 @@ jobs:
         env:
           # Repo is served at https://vimanshamj.github.io/vimansha-portfolio/
           BASE_PATH: /vimansha-portfolio
+          # Contact form key (repo secret). Without it the form falls back to a mailto link.
+          NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
